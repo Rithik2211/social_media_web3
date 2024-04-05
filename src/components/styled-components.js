@@ -43,3 +43,7 @@ export const NavBody = styled.div`
     flex-wrap : wrap;
     padding : 0 24px;
 `;
+
+export const NavText = styled.div`
+    font-family: sans-serif;
+`;

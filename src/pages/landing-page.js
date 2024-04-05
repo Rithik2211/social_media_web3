@@ -4,6 +4,7 @@ function LandingPage() {
   return (
     <div>
       <NavBar />
+      <div style={{ borderTop: "#0D1C12"}}></div>
     </div>
   );
 }
