@@ -5,13 +5,14 @@ export const Nav = styled.div`
     top: 0px;
     z-index: 10;
     position : sticky;
-    justify-content : center;
+    justify-content : space-between;
     align-items : center;
     -webkit-box-align : center;
     -webkit-box-pack : center;
     font-size : 1rem;
     height : 65px;
     margin-top : -7px;
+    background-color : #F7FCFA;
 `;
 
 export const NavContainer = styled.div`
