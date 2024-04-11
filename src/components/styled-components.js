@@ -5,14 +5,14 @@ export const Nav = styled.div`
     top: 0px;
     z-index: 10;
     position : sticky;
-    justify-content : space-between;
+    justify-content : center;
     align-items : center;
     -webkit-box-align : center;
     -webkit-box-pack : center;
     font-size : 1rem;
     height : 65px;
     margin-top : -7px;
-    background-color : #F7FCFA;
+    background-color : white;
 `;
 
 export const NavContainer = styled.div`
@@ -21,13 +21,23 @@ export const NavContainer = styled.div`
     height : 40px;
     justify-content : space-between;
     align-items : center;
-    flex-wrap : wrap;
     padding : 0 24px;
     z-index: 1;
     position : sticky;
     top : 0;
     margin-top : -9px;
 `;
+
+export const NavHam = styled.img`
+    display : none;
+    height : 50px;
+    width : 50px;
+
+    @media screen and (max-width: 960px) {
+        display: flex;
+    }
+`;
+
 
 export const NavButton = styled.div`
     width : 40px;
@@ -44,6 +54,10 @@ export const NavBody = styled.div`
     align-items : center;
     flex-wrap : wrap;
     padding : 0 24px;
+
+    @media screen and (max-width: 960px) {
+        display: none;
+    }
 `;
 
 export const NavText = styled.div`

@@ -1,7 +1,7 @@
 import React from 'react';
 import "./component.css";
 import { useNavigate } from 'react-router-dom';
-import { Nav, NavContainer, NavBody, NavText, NavButton, NavImg } from './styled-components';
+import { Nav, NavContainer, NavBody, NavText, NavButton, NavImg, NavHam } from './styled-components';
 import { search, notify, profile, green, hamburger } from '../assests/index';
 
 function NavBar(){
@@ -15,8 +15,11 @@ function NavBar(){
         <Nav>
             <NavContainer>
                 <div style={{display: "flex", flexDirection: "row"}}>
-                    <img src={green} style={{height: "50px", width: "50px"}} alt='search'/>
+                    <img src={green} style={{height: "50px", width: "50px"}} alt='green'/>
                     <div style={{marginTop: "14px", fontWeight: "600", fontFamily: "sans-serif", fontSize: "20px"}}>Green Web</div>
+                </div>
+                <div>
+                    <NavHam src={hamburger} alt='hamburger'/>
                 </div>
                 <NavBody>
                     <NavText onClick={handleNavClick("/")} >Home</NavText>
