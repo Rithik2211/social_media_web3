@@ -11,6 +11,7 @@ export const Nav = styled.div`
     -webkit-box-pack : center;
     font-size : 1rem;
     height : 65px;
+    margin-top : -7px;
 `;
 
 export const NavContainer = styled.div`
@@ -46,4 +47,10 @@ export const NavBody = styled.div`
 
 export const NavText = styled.div`
     font-family: sans-serif;
+`;
+
+export const NavImg = styled.img`
+    height : 20px;
+    width : 20px;
+    margin : 10px;
 `;
