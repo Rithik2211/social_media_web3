@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./component.css";
 import { useNavigate } from 'react-router-dom';
-import { Nav, NavContainer, NavBody, NavText, NavButton, NavImg, NavHam } from './styled-components';
+import { Nav, NavContainer, NavBody, NavText, NavButton, NavImg, NavHam, MobileList } from './styled-components';
 import { search, notify, profile, green, hamburger } from '../assests/index';
 
 function NavBar(){
     let navigate = useNavigate();
+    const [open, setOpen] = useState(false);
 
     const handleNavClick = (link) => () => {
         navigate(link);
     }
+    const handleHamClick = () => {
+        setOpen(!open);
+    }
 
+    const handleHamNav = (link) => () => {
+        setOpen(!open);
+        navigate(link);
+    }
     return(
         <Nav>
             <NavContainer>
@@ -19,7 +27,7 @@ function NavBar(){
                     <div style={{marginTop: "14px", fontWeight: "600", fontFamily: "sans-serif", fontSize: "20px"}}>Green Web</div>
                 </div>
                 <div>
-                    <NavHam src={hamburger} alt='hamburger'/>
+                    <NavHam src={hamburger} alt='hamburger' onClick={() => handleHamClick()}/>
                 </div>
                 <NavBody>
                     <NavText onClick={handleNavClick("/")} >Home</NavText>
@@ -31,6 +39,18 @@ function NavBar(){
                     <NavButton ><NavImg src={notify} alt='nofication'/></NavButton>
                     <NavButton ><NavImg src={profile} alt='profile'/></NavButton>
                 </NavBody>
+                {
+                    open && 
+                    <MobileList isOpen={open}>
+                        <div onClick={handleHamNav("/")} >Home</div>
+                        <div onClick={handleHamNav("/Explore")}>Explore</div>
+                        <div onClick={handleHamNav("/Notification")}>Notifications</div>
+                        <div onClick={handleHamNav("/Messages")}>Messages</div>
+                        <div onClick={handleHamNav("/")}>New Post</div>
+                        <div onClick={handleHamNav("/")}>Announcements</div>
+                        <div onClick={handleHamNav("/")}>Profile</div>
+                    </MobileList>
+                }
             </NavContainer>
         </Nav>
     )

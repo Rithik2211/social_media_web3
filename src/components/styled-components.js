@@ -38,7 +38,6 @@ export const NavHam = styled.img`
     }
 `;
 
-
 export const NavButton = styled.div`
     width : 40px;
     height : 40px;
@@ -68,4 +67,26 @@ export const NavImg = styled.img`
     height : 20px;
     width : 20px;
     margin : 10px;
+`;
+
+export const MobileList = styled.div`
+   display : flex;
+   flex-direction : column;
+   justify-content : center;
+   align-items : center;
+   gap : 16px;
+   position : absolute;
+   top : 80px;
+   right : 0;
+   width : 100%;
+   color : white;
+   font-family : sans-serif;
+   background : ${ '#191924'+99 };
+   padding : 12px 40px 24px 40px;
+   transition : all 0.6s ease-in-out;
+   transform : ${({isOpen}) => ( isOpen ? 'translateY(0)' : 'translateY(-100%)' )};
+   border-radius : 0 0 20px 20px;
+   box-shadow : 0 0 10px 0 rbga(0, 0, 0, 0.2);
+   opacity : ${({isOpen}) => ( isOpen ? '100%' : '0' )};
+   z-index : ${({isOpen}) => ( isOpen ? '1000' : '-1000' )};
 `;
