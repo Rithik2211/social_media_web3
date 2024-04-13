@@ -90,3 +90,17 @@ export const MobileList = styled.div`
    opacity : ${({isOpen}) => ( isOpen ? '100%' : '0' )};
    z-index : ${({isOpen}) => ( isOpen ? '1000' : '-1000' )};
 `;
+
+export const MobileLink = styled.div`
+   font-weight : 500;
+   color : #F2F3F4;
+   cursor : pointer;
+   transition : all 0.2s ease-in-out;
+   text-decoration : none;
+   :hover{
+     color : #854CE6;
+   }
+   &.active{
+    border-bottom : 2px solid #854CE6;
+   }
+`;

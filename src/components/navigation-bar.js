@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./component.css";
 import { useNavigate } from 'react-router-dom';
-import { Nav, NavContainer, NavBody, NavText, NavButton, NavImg, NavHam, MobileList } from './styled-components';
+import { Nav, NavContainer, NavBody, NavText, NavButton, NavImg, NavHam, MobileList, MobileLink } from './styled-components';
 import { search, notify, profile, green, hamburger } from '../assests/index';
 
 function NavBar(){
@@ -42,13 +42,13 @@ function NavBar(){
                 {
                     open && 
                     <MobileList isOpen={open}>
-                        <div onClick={handleHamNav("/")} >Home</div>
-                        <div onClick={handleHamNav("/Explore")}>Explore</div>
-                        <div onClick={handleHamNav("/Notification")}>Notifications</div>
-                        <div onClick={handleHamNav("/Messages")}>Messages</div>
-                        <div onClick={handleHamNav("/")}>New Post</div>
-                        <div onClick={handleHamNav("/")}>Announcements</div>
-                        <div onClick={handleHamNav("/")}>Profile</div>
+                        <MobileLink onClick={handleHamNav("/")} >Home</MobileLink>
+                        <MobileLink onClick={handleHamNav("/Explore")}>Explore</MobileLink>
+                        <MobileLink onClick={handleHamNav("/Notification")}>Notifications</MobileLink>
+                        <MobileLink onClick={handleHamNav("/Messages")}>Messages</MobileLink>
+                        <MobileLink onClick={handleHamNav("/")}>New Post</MobileLink>
+                        <MobileLink onClick={handleHamNav("/")}>Announcements</MobileLink>
+                        <MobileLink onClick={handleHamNav("/")}>Profile</MobileLink>
                     </MobileList>
                 }
             </NavContainer>
